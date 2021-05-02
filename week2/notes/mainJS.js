@@ -22,7 +22,7 @@ function isEven(number) {
 console.log(isEven(-31));
 
 const links = [
-  { label: "Week 1", url: "week1/week1.html"},
+  { label: "Week 1", url: "/week1/week1.html"},
   { label: "Week 2", url: "week2/week2.html"}
 ];
 console.log(links);
