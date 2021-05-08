@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="week3.js"></script>
+  <title>Week 3 Practice</title>
+</head>
+<body>
+  <section>
+    <h1>Activity 01</h1>
+    <label for="text01">Enter some text:
+      <input type="text" name="text01" id="text01">
+    </label>
+    <button type="button" onclick="writeToDiv()">Write to div</button>
+    <div id="output01"></div>
+  </section>
+
+  <section>
+    <h1>Activity 02</h1>
+    <label for="triNum">Input a number:
+      <input type="number" name="triNum" id="triNum" min=0 max=100>
+    </label>
+    <button type="button" onclick="triNum(parseFloat(document.getElementById('triNum').value))">Get Triangular
+      Number</button>
+    <div id="output02"></div>
+    <div id="output02-2"></div>
+  </section>
+
+  <section>
+    <h1>Activity 03</h1>
+    <label for="calcNum01">First Number:
+      <input type="number" name="calcNum01" id="calcNum01">
+    </label>
+    <label for="calcNum02">Second Number:
+      <input type="number" name="calcNum02" id="calcNum02">
+    </label>
+    <button type="button" onclick="addTwo()">Get Sum</button>
+    <button type="button" onclick="multiply()">Get Product</button>
+    <button type="button" onclick="divide()">Get Quotient</button>
+    <button type="button" onclick="mean(addTwo())">Get Average</button>
+    <div id="output03"></div>
+  </section>
+  
+</body>
+</html>
