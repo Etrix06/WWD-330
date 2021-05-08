@@ -44,3 +44,27 @@ var divide = function () {
 const mean = (a) => {
   document.getElementById('output03').innerHTML = a / 2
 };
+
+//For the Arguments section
+function arguments(){
+  return arguments;
+}
+
+console.log(arguments(1,2,3,4,5));
+console.log(arguments('hello', NaN));
+
+//default parameters
+
+function discount(price, amount=10) {
+  return price*(100-amount)/100;
+}
+
+console.log("the answer is " + discount(20));
+console.log("the answer is " + discount(20, 15));
+
+//arrow functions
+const square = x => x * x;
+
+const hello = () => alert('Hello World!');  
+console.log(square(8));
+console.log(hello);           //This one doesn't work and I don't know why
