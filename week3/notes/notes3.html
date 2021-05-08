@@ -35,25 +35,49 @@
 
 <h2>Functions</h2>
 <h3>Declarations</h3>
+<ul>
 <p>a function literal looks like this:
 </p>
 <p>function hello() { console.log("hello world!"); };  </p>
 <p>A function can also be defined with a function expression.  Like this:</p>
-<p>const goodbye = function() { console.log("Goodbye"); };  This is an unnamed function.</p>
-<p>const goodbye = function bye(){
+<li><p>const goodbye = function() { console.log("Goodbye"); };  This is an unnamed function.</p></li>
+<li><p>const goodbye = function bye(){
   console.log('Goodbye World!');
-};  It can also be named like this.</p>
-<p>Parameter and arguments examples</p>
+};  It can also be named like this.</p></li>
+</ul>
+<h3>Parameters and arguments</h3>
+
+<p>Examples:</p>
 <p>function square(x){
   return x*x;
 }</p>
 <p>When we invoke this function, we need to provide an argument, which is the number to be squared:
 
   square(4.5);</p>
-<p></p>
-<p></p>
-<p></p>
+<h3>Default Parameters</h3>
+<p>I found this to be very interesting.  This was new to me.</p>
+<p>These are values that will be used by the function if no arguments are provided when it is invoked. To specify a default parameter, simply assign the default value to it in the function definition:
 
+  function hello(name='World') {
+      console.log(`Hello ${name}!);
+  }</p>
+<p>Example of a function that has a default parameter of 10</p>
+<p>function discount(price, amount=10) {
+  return price*(100-amount)/100;
+}</p>
+<p>So if you call it with a parameter of 20 it will discount 10% off of it a return 18. Like this:</p>
+<p>discount(20) // standard discount of 10%
+  result is  18.  <br> You can also change the default parameter like this.<br>discount(15, 20) // discount of 20%
+   the result will be 12</p>
+<p></p>
+<h3>Arrow functions</h3>
+<p>Arrow functions can be identified by the 'arrow' symbol, => that gives them their name. The parameters come before the arrow and the main body of the function comes after. Arrow functions are always anonymous, so if you want to refer to them, you must assign them to a variable. For example, the square function we wrote earlier can be written like so:
+
+<br>const square = x => x*x;</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
 
 
 <h2>Questions</h2>
@@ -62,7 +86,8 @@
   <li>The reading have examples without using console.log.  How do they work without console logs?
     Or are they just leaving the console.log part of it out.
   </li>
- 
+  <li>I need to go back and review variable hoisting.  It doesn't make sence to me.  What is it for?</li>
+  <li></li>
 </ol>
 </body>
 </html>
