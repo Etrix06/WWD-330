@@ -1,7 +1,8 @@
 const links = [
   { label: "Week 1",  url: "week1/week1index.html"},
   { label: "Week 2",  url: "week2/week2index.html"},
-  { label: "Week 3",url: "week3/week3index.html"}
+  { label: "Week 3",  url: "week3/week3index.html"},
+  { label: "Week 4",  url: "week4/week4Index.html"}
 ]; 
 
 
