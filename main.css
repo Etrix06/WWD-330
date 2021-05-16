@@ -2,6 +2,11 @@
   background-color: lightblue;
 }
 
+.questions {
+ 
+  background-color: rgb(226, 226, 151);
+}
+
 body {
   font: 100% Lucida Sans, Verdana;
   margin: 20px;
