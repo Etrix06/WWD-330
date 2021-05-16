@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-  xmin-width: 900px;
+  min-width: 900px;
 }
 
 .wrapper {
@@ -108,4 +108,4 @@ a:hover {
       margin: 0;
   }    
 }
-</style>
+
