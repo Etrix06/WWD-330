@@ -79,12 +79,13 @@ body {
 
 
 a {
-  color: #000000;
+  color: green;
   text-decoration: underline;
 }
 
 a:hover {
   text-decoration: none;
+  background-color: lightgreen;
 }
 
 
