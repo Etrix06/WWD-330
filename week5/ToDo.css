@@ -23,9 +23,10 @@
   }
 
   .taskList {
+    float: none;
     padding: 10px;
     margin: 5px;
-    width: 215px;
+    width: 200px;
     height: 25px;
     border: solid black 1px;
     text-align: left;
