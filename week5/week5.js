@@ -17,3 +17,7 @@ function addToIndex() {
       document.getElementById("indexList").appendChild(y);
     }
 }
+
+const tasks = [
+  
+];

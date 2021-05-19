@@ -4,9 +4,30 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="ToDo.css">
+  <script src="week5.js"></script> 
+  <style>
+
+  </style>
   <title>ToDo List</title>
 </head>
-<body>
+<body onload="loadTasks()">
+
+  <div id="toDo">
+    <h1>Todos</h1>
+    <div id="innerTodos">
+      <ul id="tasks">
+        <li><div class="taskList"><input type="checkbox" style="float: left;" >Eat dinner</div></li>
+        <li><div class="taskList"><input type="checkbox" style="float: left;" >Take my medicine</div></li>
+        <li><div class="taskList"><input type="checkbox" style="float: left;" ></div></li>
+        <li><div class="taskList"><input type="checkbox" style="float: left;" ></div></li>
   
+      </ul>
+      
+    </div>
+    <br>
+    <input id="taskInput"></input><button>+</button>
+
+  </div>
 </body>
 </html>
