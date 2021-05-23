@@ -18,6 +18,147 @@
     <a href="week5Index.html">Back to Week 5 Index</a>
     <a href="#questions">Questions</a>
   </div>
+  <h3>Exeptions</h3>
+  <ul>
+    <li>An exception is an error that produces a return value that
+       can then be used by the program to deal with the error. For 
+       example, trying to call a method that is nonexistent will 
+       result in a reference error that raises an exception, as you 
+       can see in the example below when we try to call the mythical 
+       unicorn() function:</li>
+       <li>unicorn();
+        << ReferenceError: unicorn is not defined</li>
+  </ul>
+  <h3>Warnings</h3>
+    <ul>
+      <li>A warning can occur if there’s an error in the code that 
+        isn't enough to cause the program to crash. This means the 
+        program will continue to run after a warning. This might sound 
+        good, but it can be problematic, since the issue that produced 
+        the warning may cause the program to continue running incorrectly.</li>
+    </ul>
+  <h3>Linting Tools</h3>
+  <ul>
+    <li>JS Lint</li>
+    <li>JS Hint</li>
+    <li>ES Lint</li>
+    <p>Linting tools such asJS Lint,JS Hint,andES Lintcan be used to 
+      test the quality of JavaScript code, beyond simply using strict 
+      mode. They are designed to highlight any sloppy programming 
+      practices or syntax errors, and will complain if certain style 
+      conventions are not followed, such as how code is indented. 
+      They can be very unforgiving and use some opinionated coding 
+      conventions, such as not using the ++ and -- increment operators 
+      (in the case of JS Lint). Linting tools are also useful for 
+      enforcing a programmingstyle guide. This is particularly useful 
+      when you are working in a team, as it ensures everybody follows 
+      the same conventions.</p>
+  </ul>
+  <h3>Debugging in the Browser</h3>
+  <h4>The trusty Alert</h2>
+  <p>I've used this myself.  It can show you how far your code has gotten
+    before it fails.  alert().
+  </p>
+  <h4>Using the Console</h4>
+  <p>This is another way to catch errors.  console.log() is common. Console.trace()
+    is one that I haven't used myself.  Yet.
+  </p>
+  <h3>Debugging tools</h3>
+  <ul>
+    <li>Breakpoints</li>
+    <li>The <samp>debugger </samp>command is one of the most useful.</li>
+  </ul>
+  <h3>Error objects</h3>
+  <ul>
+    <li>Error()</li>
+    <li>EvalError()</li>
+    <li>RangeError()</li>
+    <li>ReferenceError()</li>
+    <li>SyntaxError()</li>
+    <li>TypeError()</li>
+    <li>URIError()</li>
+    <li>InternalError()</li>
+    <p>All error objects have a number of properties, but they’re often 
+      used inconsistently across browsers. The only properties that are 
+      generally safe to use are:</p>
+      <ul>
+      <li>The name property returns the name of the error constructor 
+        function used as a string, such as 'Error' or 'ReferenceError'.</li>
+      <li>The message property returns a description of the error and 
+        should be provided as an argument to the Error constructor function.</li>
+      <li>The stack property will return a stack trace for that error. This 
+        is a non-standard property and it’s recommended that it is not safe 
+        to use in production sites.</li>
+      </ul>
+  </ul>
+  <h3>Throwing Exeptions</h3>
+  <p>So far we’ve seen errors that are thrown automatically by the JavaScript 
+    engine when an error occurs. It’s also possible to throw your own exceptions 
+    using the throw statement. This will allow for any problems in your code to 
+    be highlighted and dealt with, rather than lurk quietly in the background.</p>
+
+    <p>The throw statement can be applied to any JavaScript expression, 
+      causing the execution of the program to stop. For example, all the 
+      following lines of code will cause a program to halt:</p>
+    
+    <p>throw 2;
+    throw 'Up';
+    throw { toys: 'out of pram' };
+    It is best practice, however, to throw an error object. This can then be 
+    caught in a catch block</p>
+        
+    <p>throw new Error('Something has gone badly wrong!');
+    As an example, let’s write a function called squareRoot() to find the 
+    square root of a number. This can be done using the Math.sqrt() method, 
+    but it returns NaN for negative arguments. This is not strictly correct 
+    (the answer should be an imaginary number, but these are unsupported in 
+    JavaScript). Our function will throw an error if the user tries to use a 
+    negative argument:</p>
+    <p>
+    function squareRoot(number) {
+        'use strict';
+        if (number < 0) {
+            throw new RangeError('You can't find the square root of 
+            negative numbers')
+        }
+        return Math.sqrt(number);
+    };</p>
+    <h3>Exception Handling</h3>
+    <h4>Try, Catch, and Finally</h4>
+    <p>function imaginarySquareRoot(number) {
+      'use strict';
+      try {
+          return String(squareRoot(number));
+      } catch(error) {
+          return squareRoot(-number)+'i';
+      }
+  }</p>
+  <h4>Tests</h4>
+  <p>Testing is an important part of programming that can often be 
+    overlooked. Writing good tests means your code will be less brittle 
+    as it develops, and any errors will be identified early on.</p>
+  <h3>Test-Driven Development (TDD)</h3>
+  <p>Test-driven development(TDD) is the process of writing tests before 
+    any actual code. Obviously these tests will initially fail, because 
+    there is no code to test. The next step is to write some code to make 
+    the tests pass. After this, the code is refactored to make it faster, 
+    more readable, and remove any repetition. The code is continually 
+    tested at each stage to make sure it continues to work. This process 
+    should be followed in small piecemeal chunks every time a new feature 
+    is implemented, resulting in the following workflow:</p>
+    <ol>
+      <li>Write tests (that initially fail)</li>
+      <li>Write code to pass the tests</li>
+      <li>Refactor the code</li>
+      <li>Test refactored code</li>
+      <li>Write more tests for new features</li>
+    </ol>
+
+
+
+
+
+  
 
 
 
@@ -25,8 +166,10 @@
 <h2 class="questions">Questions</h2>
 <a href="#topofpage">Top of Page</a>
 <ol>
-  <li>
+  <li>How common is the use of 'use strict'?  And when is the best time to use?
   </li>
+  <li>Error checking seems foreign to me, should it or will it become second nature?</li>
+  <li>In how beneficial is it to use Test-Driven Development on a project?</li>
 </ol>
 </div>
 </body>
