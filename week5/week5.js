@@ -1,7 +1,7 @@
 const links = [
-  { label: "Week 5 Notes and Questions",  url: "notes5.html"},
-  { label: "ToDo Project",                url: "ToDo-Project.html"},
-  { label: "Group Activity",              url: "week5team.html"}
+  { label: "Week 5 Notes and Questions",  url: "notes5.html"       },
+  { label: "ToDo Project",                url: "ToDo-Project.html" },
+  { label: "Group Activity",              url: "week5team.html"    }
 ]; 
 
 
