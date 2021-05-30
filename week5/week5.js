@@ -28,8 +28,7 @@ let addToDoButton = document.getElementById('addButton');
 //const tester = ["libro","com", "sem"];  //erase later
 
 
-//<li><div class="taskList"><input type="checkbox" style="float: left;" >
-  //<span id="T_one"></span><button style="float: right;">X</button></div></li>
+
 
 //************display tasks function **************
 function displayTasks() {
@@ -49,7 +48,7 @@ function displayTasks() {
     divItem.setAttributeNode(divAtt);
 
     var inputAtt = document.createAttribute('type');
-    var inputAtt2 = document.createAttribute('style')
+    var inputAtt2 = document.createAttribute('style');
     inputAtt.value = "checkbox";
     inputAtt2.value = "style='float: left;'";
     checkBox.setAttributeNode(inputAtt);
@@ -57,11 +56,26 @@ function displayTasks() {
 
     var spanAtt = document.createAttribute("id");
     spanAtt.value = "T_one";
+    spanItem.setAttributeNode(spanAtt);
 
-    //last //listItem.appendChild(divItem);
+    var btnAtt = document.createAttribute('style');
+    btnAtt.value = "style='float: right;'";
+    btnItem.setAttributeNode(btnAtt);
+    
+    spanItem.appendChild(btnItem);
+    checkBox.appendChild(spanItem);
+    divItem.appendChild(checkBox);
+    listItem.appendChild(divItem);
+    document.getElementById("tasks").appendChild(listItem);
+    //displayTasks();
+
+    //<li><div class="taskList"><input type="checkbox" style="float: left;" >
+  //<span id="T_one"></span><button style="float: right;">X</button></div></li>
     
     
     
+    
+    /*
     paragraph.classList.add('paragraph-styling');
     paragraph.innerText = inputField.value;
     toDoContainer.appendChild(paragraph);
@@ -80,7 +94,7 @@ function displayTasks() {
     paragraph.addEventListener('dblclick', function() {
       paragraph.style.textDecoration = "line-through";
       toDoContainer.removeChild(paragraph);
-    })
+    })  */
   })
 
   //for (let i = 0; i < tasks.length; i ++){
