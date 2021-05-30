@@ -5,29 +5,43 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="ToDo.css">
-  <script src="week5.js"></script> 
+
   <style>
 
   </style>
   <title>ToDo List</title>
 </head>
-<body onload="loadTasks()">
+<body>
 
   <div id="toDo">
     <h1>Todos</h1>
     <div id="innerTodos">
       <ul id="tasks">
-        <li><div class="taskList"><input type="checkbox" style="float: left;" >Eat dinner</div></li>
-        <li><div class="taskList"><input type="checkbox" style="float: left;" >Take my medicine</div></li>
-        <li><div class="taskList"><input type="checkbox" style="float: left;" ></div></li>
-        <li><div class="taskList"><input type="checkbox" style="float: left;" ></div></li>
-  
+ 
+  <!--
+        <li><div class="taskList"><input type="checkbox" style="float: left;" ><span id="T_one"></span><button style="float: right;">X</button></div></li>
+        <li><div class="taskList"><input type="checkbox" style="float: left;" ><span id="T_two"></span><button style="float: right;">X</button></div></li>
+        <li><div class="taskList"><input type="checkbox" style="float: left;" ><span id="T_three"></span><button style="float: right;">X</button></div></li>
+        <li><div class="taskList"><input type="checkbox" style="float: left;" ><span id="T_four"></span><button style="float: right;">X</button></div></li>
+        <li><div class="taskList"><input type="checkbox" style="float: left;" ><span id="T_five"></span><button style="float: right;">X</button></div></li>
+        <li><div class="taskList"><input type="checkbox" style="float: left;" ><span id="T_six"></span><button style="float: right;">X</button></div></li>
+  -->
       </ul>
-      
-    </div>
-    <br>
-    <input id="taskInput"></input><button>+</button>
+      <div class="tasksLeftDiv">
+        <span class="tasksLeft" id="tasksLeft">0</span><span> tasks left</span>
 
+        <button>All.</button><button>Active.</button><button>Completed</button>
+      </div>
+    </div>
+    
+    <br>
+
+    <div class="taskInput">
+      <input id="task_input" type="text" placeholder="Add to list"></input>
+      <button id="addButton" onclick="addTask()">+</button>
+    </div>
   </div>
+  Test Display<p id="test"></p>
+  <script src="week5.js"></script> 
 </body>
 </html>

@@ -22,6 +22,11 @@
     list-style-type: none;
   }
 
+  .taskInput button.active{
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   .taskList {
     float: none;
     padding: 10px;
