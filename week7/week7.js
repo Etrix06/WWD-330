@@ -53,3 +53,16 @@ apiButton.addEventListener('click', () => {
   .then( data => outputDiv.innerText = data.value )
   .catch( error => console.log('There was an error:', error))
 },false);
+
+const clark = { name: 'Clark' };
+const bruce = { name: 'Bruce' };
+const james = { name: 'James. James Bond'};
+
+function hello() {
+  document.getElementById("hello").innerHTML = sayHello.call(bruce, 'How do you do');
+}
+
+function sayHello(greeting='Hello') {
+  return `${ greeting }, my name is ${ this.name}`;
+}
+
