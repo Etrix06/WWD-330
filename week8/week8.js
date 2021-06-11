@@ -1,12 +1,7 @@
 const links = [
-  { label: "Week 1",  url: "week1/week1index.html"},
-  { label: "Week 2",  url: "week2/week2index.html"},
-  { label: "Week 3",  url: "week3/week3index.html"},
-  { label: "Week 4",  url: "week4/week4Index.html"},
-  { label: "Week 5",  url: "week5/week5Index.html"},
-  { label: "Week 6",  url: "week6/week6Index.html"},
-  { label: "Week 7",  url: "week7/week7Index.html"},
-  { label: "Week 8",  url: "week8/week8Index.html"}
+  { label: "Notes and Questions",                url: "../week8/notes8.html" },
+  { label: "Practice Page      ",                url: "../week8/practice8.html"}
+
 ]; 
 
 
@@ -23,4 +18,3 @@ function addToIndex() {
       document.getElementById("indexList").appendChild(y);
     }
 }
-
