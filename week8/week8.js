@@ -1,6 +1,6 @@
 const links = [
   { label: "Notes and Questions",                url: "../week8/notes8.html" },
-  { label: "Practice Page      ",                url: "../week8/practice8.html"}
+  { label: "Pokemon API      ",                url: "../week8/practice8.html"}
 
 ]; 
 
