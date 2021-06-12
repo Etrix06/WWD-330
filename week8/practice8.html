@@ -1,22 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    .ad-ad2 h1 span {
-      color: #484848;  
-      transform: translateX(40px);
-      font-size: 30px;
-      color: #999999;
-      display: inline-block;
-    }
-  </style>
-  <title>Practice 8</title>
+  <title>Pokedex</title>
+  <link rel="stylesheet" href="css/pokeStyle.css">
 </head>
+
 <body>
-  <h1>Put your <span>dukes</span> up, sire</h1>
-  
+  <main>
+    <div>
+      <h1 style="color:black; background-color: yellow;">Welcome to the online Pokedex</h1>
+      <a href="week8Index.html">Back to week 8 index</a>
+    </div>
+    <p class="intro">We welcome all who seek to learn more about the marvelous 
+      world of Pokemon. Please select page 1 through 8 and Click "Find Pokemon".</p>
+    <!-- <input type="search" name="pokemon" id="pokemon" disabled>
+    <input type="button" value="Find Pokemon" onclick="getData()" disabled> -->
+    <div class="search">
+      <input type="number" name="pokemon" id="gen" min=1 max=8 value="1">
+      <input type="button" value="Find Pokemon" onclick="getData()">
+    </div>
+    <div id="poke-container">
+
+    </div>
+  </main>
 </body>
+<script src="week8.js"></script>
+
 </html>
