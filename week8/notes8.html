@@ -9,7 +9,9 @@
   <title>Week 8 Notes</title>
   <script></script>
   <style>
-
+    .myCanvas {
+      border: dotted 2px black;
+    }
   </style>
 </head>
 <body>
@@ -56,7 +58,22 @@
   </div>
   <div>
     <h1>Chapter 12: Canvas, SVG, and Drag and Drop</h1>
-    <h2></h2>
+    <h2>Canvas</h2>
+    <p>The first step to using canvas is to add a canvas element to the page:</p>
+    <p>The canvas element takes both a width and height attribute, which must 
+      also be set.</p>
+      <p>Finally, let’s add a border to our canvas using some CSS to visually 
+        distinguish it on the page. Canvas has no default styling, so it’s 
+        difficult to see where it is on the page unless you give it some kind 
+        of border:</p>
+        <p>The rest of the instructions will be in the canvas.js file</p>
+    <canvas id="myCanvas" class="myCanvas" width="200" height="200">
+      Sorry! Your browser doesn’t support Canvas.
+  </canvas>
+
+  <p>Now you can draw on the canvas using the Canvas API</p>
+
+  <p id="demo2"></p>
   
   </div>
 
@@ -73,5 +90,7 @@
 
   </ol>
   </div>
+  
   </body>
+  <script src="canvas.js"></script>
   </html>
