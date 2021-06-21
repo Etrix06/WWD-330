@@ -1,6 +1,6 @@
 const links = [
   { label: "Notes and Questions",                url: "../week9/notes9.html" },
-  { label: "Drum Kit",                url: "../week8/practice9.html"}
+  { label: "Drum Kit",                url: "../week9/practice9.html"}
 
 ]; 
 
