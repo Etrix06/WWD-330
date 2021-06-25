@@ -18,3 +18,9 @@ function addToIndex() {
       document.getElementById("indexList").appendChild(y);
     }
 }
+
+const popup = window.open('https://www.google.com','Google','width=400,height=400,resizable=yes');
+
+function openPopUp() {
+  window.open('https://www.google.com','Google','width=400,height=400,resizable=yes');
+}
