@@ -66,9 +66,33 @@
      This would replace the whole document with the string Hello, world! . It is possible to include 
      HTML in the string and this will become part of the DOM tree. For example, the following piece of 
      code will create an h1 tag node and a child text node:</p>
-     
-     
-     
+
+  </div>
+  <div>
+    <h1>Chapter 14: API's</h1>
+    <h3>The data- Attribute</h3>
+    <p>The data- attribute is a way of embedding data in a web page using custom attributes 
+      that are ignored by the browser. They’re also private to a page, so are not intended 
+      to be used by an external service – their sole purpose is to be used by a JavaScript 
+      program. This means they’re perfect for adding data that can be used as a hook that 
+      the program utilizes to access information about a particular element on the page.
+
+      The names of these attributes can be decided by the developer, but they must use the 
+      following format:
+      
+      Start with data- .
+      
+      Contain only lowercase letters, numbers, hyphens, dots, colons or underscores.
+      
+      Include an optional string value.
+      
+      Examples could be:
+      <p>
+      data-powers = 'flight superSpeed',<br> 
+      data-rating = '5' ,<br> 
+      data-dropdown   ,<br> 
+      data-user = 'DAZ'  ,<br> 
+      data-max-length = '32'</p></p>
 
   </div>
 
