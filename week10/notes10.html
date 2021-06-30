@@ -9,14 +9,148 @@
   <title>Week 10 Notes</title>
   <script></script>
   <style>
+form {
+  font: 1em sans-serif;
+  max-width: 320px;
+}
+
+p > label {
+  display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea,
+fieldset {
+  width : 100%;
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+
+input:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+
+input:focus:invalid {
+  box-shadow: none;
+}
+
+
 
   </style>
 </head>
 <body>
   <div class="top-section" id="topofpage">
-    <h1>Week 9 Notes</h1>
+    <h1>Week 10 Notes</h1>
     <a href="week10Index.html">Back to Week 10 Index</a>
     <a href="#questions">Questions</a>
+  </div>
+  <div>
+    <h1>Client-side form validation</h1>
+    <p>Before submitting data to the server, it is important to ensure all required form 
+      controls are filled out, in the correct format. This is called client-side form 
+      validation, and helps ensure data submitted matches the requirements set forth in 
+      the various form controls.</p>
+      <p>Client-side validation is an initial check and an important feature of good user 
+        experience; by catching invalid data on the client-side, the user can fix it 
+        straight away. If it gets to the server and is then rejected, a noticeable delay 
+        is caused by a round trip to the server and then back to the client-side to tell 
+        the user to fix their data.</p>
+        <h3>Form Validation</h3>
+        <p>Go to any popular site with a registration form, and you will notice that they 
+          provide feedback when you don't enter your data in the format they are expecting. 
+          You'll get messages such as:<br>
+
+          "This field is required" (You can't leave this field blank).<br>
+          "Please enter your phone number in the format xxx-xxxx" (A specific data format 
+          is required for it to be considered valid).<br>
+          "Please enter a valid email address" (the data you entered is not in the right format).<br>
+          "Your password needs to be between 8 and 30 characters long and contain one uppercase 
+          letter, one symbol, and a number." (A very specific data format is required for your data).<br>
+          This is called form validation. When you enter data, the browser and/or the web server 
+          will check to see that the data is in the correct format and within the constraints set 
+          by the application. Validation done in the browser is called client-side validation, 
+          while validation done on the server is called server-side validation. In this chapter 
+          we are focusing on client-side validation.</p>
+          <h3>Different types of client-side validation</h3>
+            <ul>
+              <li>Built-in form Validation</li>
+              <li>JavaScript</li>
+            </ul>
+            <h4>Built-in validation</h4>
+            <p>One of the most significant features of HTML5 form controls is the ability to 
+              validate most user data without relying on JavaScript. This is done by using 
+              validation attributes on form elements. We've seen many of these earlier in the 
+              course, but to recap:</p>
+              <ul><li>required: Specifies whether a form field needs to be filled in before the 
+                form can be submitted.</li>
+              <li>minlength and maxlength: Specifies the minimum and maximum length of textual 
+                data (strings)</li>
+              <li>min and max: Specifies the minimum and maximum values of numerical input types</li>
+              <li>type: Specifies whether the data needs to be a number, an email address, or some 
+                other specific preset type. </li>
+              <li>pattern: Specifies a regular expression that defines a pattern the entered data 
+                needs to follow.</li></ul>
+                <h4>Example</h4>
+                <form>
+                  <p>
+                  <fieldset>
+                  <legend>Do you have a driver's license?<abbr title="This field is mandatory" aria-label="required">*</abbr></legend>
+                  <!-- While only one radio button in a same-named group can be selected at a time,
+                  and therefore only one radio button in a same-named group having the "required"
+                  attribute suffices in making a selection a requirement -->
+                  <input type="radio" required name="driver" id="r1" value="yes"><label for="r1">Yes</label>
+                  <input type="radio" required name="driver" id="r2" value="no"><label for="r2">No</label>
+                  </fieldset>
+                  </p>
+                  <p>
+                  <label for="n1">How old are you?</label>
+                  <!-- The pattern attribute can act as a fallback for browsers which
+                  don't implement the number input type but support the pattern attribute.
+                  Please note that browsers that support the pattern attribute will make it
+                  fail silently when used with a number field.
+                  Its usage here acts only as a fallback -->
+                  <input type="number" min="12" max="120" step="1" id="n1" name="age"
+                  pattern="\d+">
+                  </p>
+                  <p>
+                  <label for="t1">What's your favorite fruit?<abbr title="This field is mandatory" aria-label="required">*</abbr></label>
+                  <input type="text" id="t1" name="fruit" list="l1" required
+                  pattern="[Bb]anana|[Cc]herry|[Aa]pple|[Ss]trawberry|[Ll]emon|[Oo]range">
+                  <datalist id="l1">
+                  <option>Banana</option>
+                  <option>Cherry</option>
+                 <option>Apple</option>
+                 <option>Strawberry</option>
+                <option>Lemon</option>
+                <option>Orange</option>
+              </datalist>
+            </p>
+            <p>
+              <label for="t2">What's your e-mail address?</label>
+              <input type="email" id="t2" name="email">
+            </p>
+            <p>
+              <label for="t3">Leave a short message</label>
+              <textarea id="t3" name="msg" maxlength="140" rows="5"></textarea>
+            </p>
+            <p>
+              <button>Submit</button>
+            </p>
+          </form>
+        <h4>JavaScript Validation</h4>
+        <p>You must use JavaScript if you want to take control over the look and feel 
+          of native error messages or to deal with legacy browsers that do not support 
+          HTML's built-in form validation. In this section we will look at the different 
+          ways to do this.</p>
+          <p>Contraint Validation API</p>
+          
+
+
+          
+
+
   </div>
 
 
@@ -27,7 +161,8 @@
   <h2 class="questions">Questions</h2>
   <a href="#topofpage">Top of Page</a>
   <ol>
-
+    <li>When using built-in validation.  
+      How do we display an error if the value is wrong? Solved</li>
 
   </ol>
   </div>
