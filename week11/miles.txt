@@ -1,0 +1,16 @@
+{ "trip" :
+   { "startcity" : "Boise",
+      "startstate" : "ID",
+      "endcity" : "Denver",
+      "endstate" : "CO",
+      "miles" : "814",
+      "tmode" :
+       [
+          "Plane",
+          "Car",
+          "Bus",
+          "Bike",
+          "Foot"
+       ]
+    }
+}

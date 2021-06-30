@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="jquery-3.5.1.min.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Miles</title>
+  <style>
+      .blue {
+        text-align: center;
+        background-color: rgb(128, 182, 243);
+        font-family: Verdana, Geneva, sans-serif;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 5px;
+      }
+      .center {
+        text-align: center;
+        
+        margin-left: auto;
+        margin-right: auto;
+        
+      }
+      #result {
+         
+        text-align: center; 
+        color: black;
+        border: 1px solid rgb(128, 182, 243);
+        
+        margin-left: auto;
+        margin-right: auto;
+        
+      }
+      h3 {
+        color: black;
+      }
+      #outerBlue {
+        border: 2px solid rgb(128, 182, 243);
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #half {
+        display: block;
+        margin-bottom: 2px;
+        font-size:2px;
+        line-height: 2px;
+      }
+  
+    </style>
+  </head>
+  <body>
+    <br>
+    <p>Only Works from Boise ID to Denver CO</p>
+  <div id="outerBlue">
+      <h1 class="blue">Mileage Calculator</h1>
+    <br>
+    <div class="center"> 
+  
+      <label for="startCity">Starting City:</label>
+      <input type="text" name="startCity" id="startCity" placeholder="Start City">
+      
+      <!--<select name="startState" id="startState">
+        <option value="AL">AL </option><option value="AK">AK </option><option value="AZ">AZ </option><option value="AR">AR </option><option value="CA">CA </option>
+        <option value="CO">CO </option><option value="CT">CT </option><option value="DE">DE </option><option value="FL">FL </option><option value="GA">GA </option>
+        <option value="HI">HI </option><option value="ID">ID </option><option value="IL">IL </option><option value="IN">IN </option><option value="IA">IA </option>
+        <option value="KS">KS </option><option value="KY">KY </option><option value="LA">LA </option><option value="ME">ME </option><option value="MD">MD </option>
+        <option value="MA">MA </option><option value="MI">MI </option><option value="MN">MN </option><option value="MS">MS </option><option value="MO">MO </option>
+        <option value="MT">MT </option><option value="NE">NE </option><option value="NV">NV </option><option value="NH">NH </option><option value="NJ">NJ </option>
+        <option value="NM">NM </option><option value="NY">NY </option><option value="NC">NC </option><option value="ND">ND </option><option value="OH">OH </option>
+        <option value="OK">OK </option><option value="OR">OR </option><option value="PA">PA </option><option value="RI">RI </option><option value="SC">SC </option>
+        <option value="SD">SD </option><option value="TN">TN </option><option value="TX">TX </option><option value="UT">UT </option><option value="VT">VT </option>
+        <option value="VA">VA </option><option value="WA">WA </option><option value="WV">WV </option><option value="WI">WI </option><option value="WY">WY </option>
+      </select>  --> 
+      <label for="startState">State:</label> 
+      <input type="text" name="startState" id="startState" placeholder="ST" size="2" maxlength="2">
+      <br><br>
+      <label for="endCity">Ending City:</label>
+      <input type="text" name="endCity" id="endCity" placeholder="End City">
+      
+      <!--<select name="endState" id="endState">
+        <option value="AL">AL </option><option value="AK">AK </option><option value="AZ">AZ </option><option value="AR">AR </option><option value="CA">CA </option>
+        <option value="CO">CO </option><option value="CT">CT </option><option value="DE">DE </option><option value="FL">FL </option><option value="GA">GA </option>
+        <option value="HI">HI </option><option value="ID">ID </option><option value="IL">IL </option><option value="IN">IN </option><option value="IA">IA </option>
+        <option value="KS">KS </option><option value="KY">KY </option><option value="LA">LA </option><option value="ME">ME </option><option value="MD">MD </option>
+        <option value="MA">MA </option><option value="MI">MI </option><option value="MN">MN </option><option value="MS">MS </option><option value="MO">MO </option>
+        <option value="MT">MT </option><option value="NE">NE </option><option value="NV">NV </option><option value="NH">NH </option><option value="NJ">NJ </option>
+        <option value="NM">NM </option><option value="NY">NY </option><option value="NC">NC </option><option value="ND">ND </option><option value="OH">OH </option>
+        <option value="OK">OK </option><option value="OR">OR </option><option value="PA">PA </option><option value="RI">RI </option><option value="SC">SC </option>
+        <option value="SD">SD </option><option value="TN">TN </option><option value="TX">TX </option><option value="UT">UT </option><option value="VT">VT </option>
+        <option value="VA">VA </option><option value="WA">WA </option><option value="WV">WV </option><option value="WI">WI </option><option value="WY">WY </option> 
+      </select>-->
+      <label for="endState">State:</label>
+      <input type="text" name="endState" id="endState" placeholder="ST" size="2" maxlength="2">
+    </div>
+    <br>
+    <div class="blue">
+      <br><br id="half">
+      <button type="button" class="btn btn-primary" onclick="validate()">Calculate Distance</button><br/><br>
+    </div>
+    <div id="result"></div>
+    <div id="test"></div>
+    <a href="week11Index.html">Back to week 11 Index</a>
+    </div>
+    
+    <script>
+    // declare variables
+        var startCity;
+        var endCity;
+        var startState;
+        var endState;
+  function validate() {    
+    // set value to variables
+    startCity = document.getElementById('startCity').value;
+    endCity = document.getElementById('endCity').value;
+    startState = document.getElementById('startState').value;
+    endState = document.getElementById('endState').value;
+    
+    // verify form is filled out, if so then create query string and send request
+    if (startCity == 0 || endCity == 0)
+      document.getElementById("result").innerHTML = "<h3 style='color: red;'>Form cannot be left blank<h3>";
+    else { 
+      var url = "miles.txt";//cgi-bin/cs213/mileageAjaxJSON?startCity=" + startCity + "&startState=" + startState + "&endCity=" + endCity + "&endState=" + endState;
+      getRequest(url);
+    }  
+  }
+  
+  /************************************
+  *AJAX REQUEST
+  *
+  ************************************/
+  function getRequest(url) {
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        var obj = JSON.parse(this.response);
+        var miles = obj.trip.miles;
+        if (miles == "Unknown") {
+          document.getElementById("result").innerHTML = "<h3 style='color: red;'>Result for " + startCity + " " + startState + " to " + endCity + " " + endState + " is  not in system</h3>";
+          return;
+        }
+        var output = "<br><h2>The distance from " + startCity + " " + startState + " to " + endCity + " " + endState + " is " + miles + " miles.<h2>";
+        if (obj.trip.tmode != undefined) {
+          output += "<h3>Reachable by:</h3>";
+          for (var i = 0; i < obj.trip.tmode.length; i++) {
+            if(obj.trip.tmode[i] == "Plane") {
+               output += "<h1 style='display: inline-block;color:grey; filter: grayscale(100%);'>&#9992</h1>"
+            } else if (obj.trip.tmode[i] == "Bus") {
+               output += "<h1 style='display: inline-block;color:grey; filter: grayscale(100%);'>&#128653</h1>"
+            } else if (obj.trip.tmode[i] == "Car") {
+               output += "<h1 style='display: inline-block;color:grey; filter: grayscale(100%);'>&#128664</h1>"
+            } else if (obj.trip.tmode[i] == "Bike") {
+               output += "<h1 style='display: inline-block;color:grey; filter: grayscale(100%);'>&#128692</h1>"
+            } else if (obj.trip.tmode[i] == "Foot") {
+               output += "<h1 style='display: inline-block;color:grey; filter: grayscale(100%);'>&#128694</h1>"
+            } 
+          }    
+        }
+        output += "<br>";
+        document.getElementById("result").innerHTML = output;  
+      }
+    };
+          httpRequest.open("GET", url, true);
+          httpRequest.send();
+      
+  };
+    </script>
+  </body>
+  </html>
+     
+  
+ 
