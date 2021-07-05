@@ -44,3 +44,13 @@ function addToIndex(){
   }
 
 }
+
+
+
+function dice(n) {
+  let x = Math.random();
+  console.log("n is " + n);
+  console.log("x is " + x);
+  let result = Math.floor(x * n) + 1;
+  document.getElementById("result").innerHTML = "You rolled " + result;
+}
