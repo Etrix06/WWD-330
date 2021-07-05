@@ -68,3 +68,8 @@ const square = x => x * x;
 const hello = () => alert('Hello World!');  
 console.log(square(8));
 console.log(hello);           //This one doesn't work and I don't know why
+
+function changeDOM() {
+  document.getElementById("practice").style.color = "red";
+  document.getElementById("practice").innerHTML = "This paragraphs innerHTML is now changed, you can also change the style color too.";
+}
