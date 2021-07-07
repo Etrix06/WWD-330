@@ -20,14 +20,10 @@ class UI {
   constructor() {
     this.uiContainer = document.getElementById("content");
     this.city;
-    this.defaultCity = "London";
+    this.defaultCity = "Rexburg";
   }
 
   populateUI(data) {
-    //de-structure vars
-
-    //add them to inner HTML
-
     this.uiContainer.innerHTML = `
         
         <div>
@@ -38,7 +34,6 @@ class UI {
                 
             </div>
         </div>
-        
         
         `;
   }
