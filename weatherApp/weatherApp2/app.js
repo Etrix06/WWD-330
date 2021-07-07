@@ -5,8 +5,9 @@ const ui = new UI();
 
 //add event listeners//
 
-const search = document.getElementById("searchUser");
+const search = document.getElementById("searchCity");
 const button = document.getElementById("submit");
+
 button.addEventListener("click", () => {
   const currentVal = search.value;
 
