@@ -33,8 +33,8 @@ class UI {
         <div>
             <div>
                 <h3>${data.name}</h3>
-                <h4>Highs of ${data.main.temp_max}. Lows of ${data.main.temp_min}</h4>
-                <p>Weather conditions are described as: <span class="description">${data.weather[0].description}</span></p>
+                <h4>Highs of ${data.main.temp_max}. <br> Lows of ${data.main.temp_min}</h4>
+                <p>Weather conditions are described as: <br><span class="description">${data.weather[0].description}</span></p>
                 
             </div>
         </div>
