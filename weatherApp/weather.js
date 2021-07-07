@@ -40,13 +40,14 @@ class UI {
 
   clearUI() {
     uiContainer.innerHTML = "";
+ 
   }
 
-  saveToLS(data) {
+  saveToLocalStorage(data) {
     localStorage.setItem("city", JSON.stringify(data));
   }
 
-  getFromLS() {
+  getFromLocalStorage() {
     if (localStorage.getItem("city" == null)) {
       return this.defaultCity;
     } else {
@@ -72,14 +73,17 @@ button.addEventListener("click", () => {
 
   ft.getCurrent(currentVal).then((data) => {
     ui.populateUI(data);
-    ui.saveToLS(data);
+    ui.saveToLocalStorage(data);
   });
 });
 
-//event listener for local storage
+//event listener for local storage and to clear
 
 window.addEventListener("DOMContentLoaded", () => {
-  const dataSaved = ui.getFromLS();
+  clearUI();
+  clearLS();
+  
+  const dataSaved = ui.getFromLocalStorage();
   ui.populateUI(dataSaved);
 });
 
