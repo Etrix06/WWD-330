@@ -1,11 +1,11 @@
 class Fetch {
-  async getCurrent(input) {
+  async getCurrent(city) {
     const myKey = "b289d6d45af893f5469e8c958107b6d7";
 
     //make request to url
 
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${input}&units=imperial&appid=${myKey}`
+      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${myKey}`
     );
 
     const data = await response.json();
@@ -28,11 +28,11 @@ class UI {
         
         <div>
             <div>
-                <h3>${data.name}, ${data.sys.country}</h3>
-                <h3>${data.main.temp}°F<h3>
+                <h3>${data.city.name}, ${data.city.country}</h3>
+                <h3>${data.list[0].main.temp}°F<h3>
                 
-                <h4>Highs of ${data.main.temp_max}°F. <br> Lows of ${data.main.temp_min}°F</h4>
-                <p>Weather conditions are described as: <br><span class="description">${data.weather[0].description}</span></p>
+                <h4>Highs of ${data.list[0].main.temp_max}°F. <br> Lows of ${data.list[0].main.temp_min}°F</h4>
+                <p>Weather conditions are described as: <br><span class="description">${data.list[0].weather[0].description}</span></p>
                 
             </div>
         </div>
@@ -82,8 +82,8 @@ button1.addEventListener("click", () => {
 //event listener for local storage and to clear
 
 window.addEventListener("DOMContentLoaded", () => {
-  clearUI();
-  clearLS();
+  //clearUI();
+  //clearLS();
   
   const dataSaved = ui.getFromLocalStorage();
   ui.populateUI(dataSaved);
