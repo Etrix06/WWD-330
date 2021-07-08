@@ -18,7 +18,7 @@ class Fetch {
 
 class UI {
   constructor() {
-    this.uiContainer = document.getElementById("content");
+    this.uiContainer = document.getElementById("display");
     this.city;
     this.defaultCity = "Rexburg";
   }
@@ -28,8 +28,10 @@ class UI {
         
         <div>
             <div>
-                <h3>${data.name}</h3>
-                <h4>Highs of ${data.main.temp_max}. <br> Lows of ${data.main.temp_min}</h4>
+                <h3>${data.name}, ${data.sys.country}</h3>
+                <h3>${data.main.temp}°F<h3>
+                
+                <h4>Highs of ${data.main.temp_max}°F. <br> Lows of ${data.main.temp_min}°F</h4>
                 <p>Weather conditions are described as: <br><span class="description">${data.weather[0].description}</span></p>
                 
             </div>
@@ -66,9 +68,9 @@ const ft = new Fetch();
 const ui = new UI();
 
 const search = document.getElementById("searchCity");
-const button = document.getElementById("submit");
+const button1 = document.getElementById("submit");
 
-button.addEventListener("click", () => {
+button1.addEventListener("click", () => {
   const currentVal = search.value;
 
   ft.getCurrent(currentVal).then((data) => {
