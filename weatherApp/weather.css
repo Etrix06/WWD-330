@@ -31,3 +31,7 @@ body {
   color: blue;
   font-size: 25px;
 }
+.inline {
+  display: inline;
+  padding: 10px;
+}

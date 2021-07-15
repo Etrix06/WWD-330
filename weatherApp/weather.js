@@ -61,12 +61,24 @@ class Display5days {
     this.display.innerHTML = `
         
         <div>
+
             <div>
                 <h3>${data.city.name}, ${data.city.country}</h3>
-                <h4>${formattedDate1}</h4><h4>${formattedDate2}</h4><h4>${formattedDate3}</h4>
+                <h4 class="inline">${formattedDate1}</h4>
+                <h4 class="inline">${formattedDate2}</h4>
+                <h4 class="inline">${formattedDate3}</h4>
+                <br>
+                <h5 class="inline">High: ${data.list[0].main.temp_max}</h5>
+                <h5 class="inline">High: ${data.list[6].main.temp_max}</h5>
+                <h5 class="inline">High: ${data.list[14].main.temp_max}</h5>
+                <br>
+                <h5 class="inline">Low: ${data.list[0].main.temp_min} </h5>
+                <h5 class="inline">Low: ${data.list[8].main.temp_min}  </h5>
+                <h5 class="inline">Low: ${data.list[16].main.temp_min}</h5>
                 
                 
             </div>
+            
         </div>
         
         `;
