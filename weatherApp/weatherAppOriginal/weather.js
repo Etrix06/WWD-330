@@ -16,13 +16,17 @@ class Fetch {
     return data;
   }
 }
-
+//UI is now Display
 class Display {
   constructor() {
+    //uiContainer is now display
     this.display = document.getElementById("display");
+    //this.city;
+    //this.defaultCity = "Rexburg";
   }
 
   displayData(data) {
+    //console.log("Default city is - " + this.defaultCity);
     this.display.innerHTML = `
         
         <div>
@@ -38,15 +42,41 @@ class Display {
         
         `;
   }
+/*
+  clearUI() {
+    uiContainer.innerHTML = "";
+ 
+  }
 
+  saveToLocalStorage(data) {
+    localStorage.setItem("city", JSON.stringify(data));
+  }
+
+  getFromLocalStorage() {
+    if (localStorage.getItem("city" == null)) {
+      return this.defaultCity;
+    } else {
+      this.city = JSON.parse(localStorage.getItem("city"));
+    }
+
+    return this.city;
+  }
+
+  clearLS() {
+    localStorage.clear();
+  } */
 }
 
 class Display5days {
   constructor() {
+    //uiContainer is now display
     this.display = document.getElementById("display");
+    //this.city;
+    //this.defaultCity = "Rexburg";
   }
 
   display5dayForcast(data) {
+    //console.log("Default city is - " + this.defaultCity);
     console.log(data.list[6].dt_txt);
     const date1 = new Date(data.list[0].dt_txt).toLocaleDateString('en-US');
     const date2 = new Date(data.list[6].dt_txt).toLocaleDateString('en-US');
@@ -75,6 +105,7 @@ class Display5days {
 
 
 const fetchClassObj = new Fetch();
+//ui is now displayClass
 const displayClassObj = new Display();
 const displayForecastObj = new Display5days();
 
@@ -87,6 +118,7 @@ button1.addEventListener("click", () => {
 
   fetchClassObj.getCurrentCity(currentVal).then((data) => {
     displayClassObj.displayData(data);
+    //ui.saveToLocalStorage(data);
   });
 });
 
@@ -105,8 +137,18 @@ button2.addEventListener("click", () => {
 
   fetchClassObj.getCurrentCity(currentVal).then((data) => {
     displayForecastObj.display5dayForcast(data);
+    //ui.saveToLocalStorage(data);
   });
 });
-
+//event listener for local storage and to clear
+/*
+window.addEventListener("DOMContentLoaded", () => {
+  //clearUI();
+  //clearLS();
+  
+  //const dataSaved = ui.getFromLocalStorage();
+  //ui.displayData(dataSaved);
+});
+*/
 
 
